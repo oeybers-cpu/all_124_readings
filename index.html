@@ -1,407 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Critical Reading Reflection - Academic Themes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: linear-gradient(135deg, #2c3e50, #1a2530);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-        
-        .instructions {
-            background-color: #e8f4fc;
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 5px solid #3498db;
-        }
-        
-        .instructions h2 {
-            color: #2980b9;
-            margin-bottom: 15px;
-        }
-        
-        .instructions ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-        
-        .instructions li {
-            margin-bottom: 8px;
-        }
-        
-        .themes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .theme-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            cursor: pointer;
-        }
-        
-        .theme-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .theme-header {
-            padding: 20px;
-            color: white;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .theme-content {
-            padding: 20px;
-        }
-        
-        .theme-content h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        .topics-list {
-            list-style-type: none;
-            margin-top: 15px;
-        }
-        
-        .topics-list li {
-            padding: 8px 0;
-            border-bottom: 1px dashed #eee;
-            display: flex;
-            align-items: center;
-        }
-        
-        .topics-list li:before {
-            content: "•";
-            color: #3498db;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        
-        .articles-count {
-            display: inline-block;
-            background: #f1f8ff;
-            color: #0366d6;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 15px;
-            cursor: pointer;
-        }
-        
-        .articles-list {
-            margin-top: 15px;
-            display: none;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-        }
-        
-        .article-item {
-            margin-bottom: 15px;
-            padding: 12px;
-            background: #f9f9f9;
-            border-radius: 6px;
-            border-left: 4px solid #3498db;
-        }
-        
-        .article-title {
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #2c3e50;
-        }
-        
-        .article-author {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 8px;
-        }
-        
-        .article-link {
-            color: #2980b9;
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: inline-block;
-            margin-top: 5px;
-        }
-        
-        .article-link:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: #7f8c8d;
-            font-size: 0.9rem;
-        }
-        
-        /* Colors for each theme */
-        .theme-1 .theme-header { background: #e74c3c; }
-        .theme-2 .theme-header { background: #2ecc71; }
-        .theme-3 .theme-header { background: #3498db; }
-        .theme-4 .theme-header { background: #9b59b6; }
-        .theme-5 .theme-header { background: #f39c12; }
-        .theme-6 .theme-header { background: #1abc9c; }
-        .theme-7 .theme-header { background: #d35400; }
-        
-        @media (max-width: 768px) {
-            .themes-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Reading Reflection - Academic Themes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c3e50, #1a2530);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .instructions {
+            background-color: #e8f4fc;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 5px solid #3498db;
+        }
+        
+        .instructions h2 {
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
+        }
+        
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .theme-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+        }
+        
+        .theme-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .theme-header {
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .theme-content {
+            padding: 20px;
+        }
+        
+        .theme-content h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .topics-list {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+        
+        .topics-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .topics-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .articles-count {
+            display: inline-block;
+            background: #f1f8ff;
+            color: #0366d6;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        
+        .articles-list {
+            margin-top: 15px;
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .article-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .article-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .article-author {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .article-link {
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .article-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        /* Colors for each theme */
+        .theme-1 .theme-header { background: #e74c3c; }
+        .theme-2 .theme-header { background: #2ecc71; }
+        .theme-3 .theme-header { background: #3498db; }
+        .theme-4 .theme-header { background: #9b59b6; }
+        .theme-5 .theme-header { background: #f39c12; }
+        .theme-6 .theme-header { background: #1abc9c; }
+        .theme-7 .theme-header { background: #d35400; }
+        
+        @media (max-width: 768px) {
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Critical Reading Reflection</h1>
-            <p class="subtitle">Assignment 2 - Academic Articles by Theme</p>
-            <p>Due Date: 8-15 September 2025 | Word Count: 850-1000 words | Weight: 30%</p>
-        </header>
-        
-        <section class="instructions">
-            <h2>Assignment Instructions</h2>
-            <p>Select one theme from the options below. Each theme folder contains academic articles related to that theme. You must choose two articles from your selected theme's folder and write a critical reflection that analyzes and synthesizes the arguments presented in those texts.</p>
-            <p>Your reflection should include:</p>
-            <ul>
-                <li>Introduction with thesis statement</li>
-                <li>Summary and analysis of each article</li>
-                <li>Synthesis and critical engagement</li>
-                <li>Conclusion with main analytical points</li>
-            </ul>
-        </section>
-        
-        <h2>Select a Theme</h2>
-        <p>Click on a theme to view its articles:</p>
-        
-        <div class="themes-grid">
-            <!-- Theme 1 -->
-            <div class="theme-card theme-1">
-                <div class="theme-header">
-                    Theme 1: Unemployment
-                </div>
-                <div class="theme-content">
-                    <h3>Topics include:</h3>
-                    <ul class="topics-list">
-                        <li>Youth unemployment</li>
-                        <li>Labour-market scarring</li>
-                        <li>Skills mismatch</li>
-                        <li>Economic policies affecting job creation</li>
-                    </ul>
-                    <span class="articles-count" onclick="toggleArticles(1)">2 articles available</span>
-                    
-                    <div class="articles-list" id="articles-theme1">
-                        <div class="article-item">
-                            <div class="article-title">Will promoting more typical SME start-ups increase job creation in South Africa?</div>
-                            <div class="article-author">Fatoki, O. (2016)</div>
-                            <a href="https://www.researchgate.net/publication/304192528_Will_promoting_more_typical_SME_start-ups_increase_job_creation_in_South_Africa" class="article-link" target="_blank">View Article</a>
-                        </div>
-                        
-                        <div class="article-item">
-                            <div class="article-title">Determinants of youth unemployment in South Africa: evidence from the Vhembe district of Limpopo province</div>
-                            <div class="article-author">Mbulawa, S. & Mbulawa, M. (2016)</div>
-                            <a href="https://www.researchgate.net/publication/311547625_Determinants_of_youth_unemployment_in_South_Africa_evidence_from_the_Vhembe_district_of_Limpopo_province" class="article-link" target="_blank">View Article</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Theme 2 -->
-            <div class="theme-card theme-2">
-                <div class="theme-header">
-                    Theme 2: Corruption
-                </div>
-                <div class="theme-content">
-                    <h3>Topics include:</h3>
-                    <ul class="topics-list">
-                        <li>Systemic corruption</li>
-                        <li>Impact on economic development</li>
-                        <li>Ethics in leadership and reporting</li>
-                        <li>Case studies (e.g., state capture)</li>
-                    </ul>
-                    <span class="articles-count" onclick="toggleArticles(2)">2 articles available</span>
-                    
-                    <div class="articles-list" id="articles-theme2">
-                        <div class="article-item">
-                            <div class="article-title">Corruption and economic growth in Africa's developing economies</div>
-                            <div class="article-author">Mlambo, C. (2020)</div>
-                            <a href="https://link.springer.com/article/10.1007/s43151-020-00012-6" class="article-link" target="_blank">View Article</a>
-                        </div>
-                        
-                        <div class="article-item">
-                            <div class="article-title">The impact of corruption on service delivery in South Africa</div>
-                            <div class="article-author">Mafukata, M.A. (2023)</div>
-                            <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2078-59762023000100038" class="article-link" target="_blank">View Article</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Theme 3 -->
-            <div class="theme-card theme-3">
-                <div class="theme-header">
-                    Theme 3: Entrepreneurship
-                </div>
-                <div class="theme-content">
-                    <h3>Topics include:</h3>
-                    <ul class="topics-list">
-                        <li>Entrepreneurship as a solution to unemployment</li>
-                        <li>Barriers to entry</li>
-                        <li>Access to capital</li>
-                        <li>Innovation in the South African context</li>
-                    </ul>
-                    <span class="articles-count" onclick="toggleArticles(3)">2 articles available</span>
-                    
-                    <div class="articles-list" id="articles-theme3">
-                        <div class="article-item">
-                            <div class="article-title">Impact of corruption on small business growth in South Africa</div>
-                            <div class="article-author">Mago, S. (2023)</div>
-                            <a href="https://doi.org/10.4102/sajbm.v54i1.3903" class="article-link" target="_blank">View Article</a>
-                        </div>
-                        
-                        <div class="article-item">
-                            <div class="article-title">Entrepreneurship education and its influence on financial literacy and entrepreneurial intentions</div>
-                            <div class="article-author">Oluwajodu, F., Greyling, J., & Blaauw, D. (2025)</div>
-                            <a href="https://doi.org/10.22521/edupij.2025.16.261" class="article-link" target="_blank">View Article</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Theme 4 -->
-            <div class="theme-card theme-4">
-                <div class="theme-header">
-                    Theme 4: National Dialogue & Governance
-                </div>
-                <div class="theme-content">
-                    <h3>Topics include:</h3>
-                    <ul class="topics-list">
-                        <li>Service delivery</li>
-                        <li>Public policy effectiveness</li>
-                        <li>Constitutionalism</li>
-                        <li>Governance and accountability</li>
-                    </ul>
-                    <span class="articles-count" onclick="toggleArticles(4)">0 articles (will be added later)</span>
-                </div>
-            </div>
-            
-            <!-- Theme 5 -->
-            <div class="theme-card theme-5">
-                <div class="theme-header">
-                    Theme 5: Education and Skills Mismatch
-                </div>
-                <div class="theme-content">
-                    <h3>Topics include:</h3>
-                    <ul class="topics-list">
-                        <li>Alignment between education and the labour market</li>
-                        <li>Financial literacy</li>
-                        <li>The "failures" of the education system</li>
-                        <li>Solutions for skills development</li>
-                    </ul>
-                    <span class="articles-count" onclick="toggleArticles(5)">0 articles (will be added later)</span>
-                </div>
-            </div>
-            
-            <!-- Theme 6 -->
-            <div class="theme-card theme-6">
-                <div class="theme-header">
-                    Theme 6: Economic Policies & Issues
-                </div>
-                <div class="theme-content">
-                    <h3>Topics include:</h3>
-                    <ul class="topics-list">
-                        <li>Broad-Based Black Economic Empowerment (B-BBEE)</li>
-                        <li>National Health Insurance (NHI)</li>
-                        <li>Inflation and repo rates</li>
-                        <li>Wealth inequality</li>
-                    </ul>
-                    <span class="articles-count" onclick="toggleArticles(6)">0 articles (will be added later)</span>
-                </div>
-            </div>
-            
-            <!-- Theme 7 -->
-            <div class="theme-card theme-7">
-                <div class="theme-header">
-                    Theme 7: Social Justice & Inequality
-                </div>
-                <div class="theme-content">
-                    <h3>Topics include:</h3>
-                    <ul class="topics-list">
-                        <li>Crime and poverty</li>
-                        <li>Access to opportunities</li>
-                        <li>Human rights</li>
-                        <li>Social cohesion</li>
-                    </ul>
-                    <span class="articles-count" onclick="toggleArticles(7)">0 articles (will be added later)</span>
-                </div>
-            </div>
-        </div>
-        
-        <footer>
-            <p>This web page is designed to help you organize articles for your Critical Reading Reflection assignment.</p>
-            <p>Remember to submit your final reflection via clickUP (Turnitin-enabled) by the due date.</p>
-        </footer>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Critical Reading Reflection</h1>
+            <p class="subtitle">Assignment 2 - Academic Articles by Theme</p>
+            <p>Due Date: 8-15 September 2025 | Word Count: 850-1000 words | Weight: 30%</p>
+        </header>
+        
+        <section class="instructions">
+            <h2>Assignment Instructions</h2>
+            <p>Select one theme from the options below. Each theme folder contains academic articles related to that theme. You must choose two articles from your selected theme's folder and write a critical reflection that analyzes and synthesizes the arguments presented in those texts.</p>
+            <p>Your reflection should include:</p>
+            <ul>
+                <li>Introduction with thesis statement</li>
+                <li>Summary and analysis of each article</li>
+                <li>Synthesis and critical engagement</li>
+                <li>Conclusion with main analytical points</li>
+            </ul>
+        </section>
+        
+        <h2>Select a Theme</h2>
+        <p>Click on a theme to view its articles:</p>
+        
+        <div class="themes-grid">
+                        <div class="theme-card theme-1">
+                <div class="theme-header">
+                    Theme 1: Unemployment
+                </div>
+                <div class="theme-content">
+                    <h3>Topics include:</h3>
+                    <ul class="topics-list">
+                        <li>Youth unemployment</li>
+                        <li>Labour-market scarring</li>
+                        <li>Skills mismatch</li>
+                        <li>Economic policies affecting job creation</li>
+                    </ul>
+                    <span class="articles-count" onclick="toggleArticles(1)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme1">
+                        <div class="article-item">
+                            <div class="article-title">Will promoting more typical SME start-ups increase job creation in South Africa?</div>
+                            <div class="article-author">Fatoki, O. (2016)</div>
+                            <a href="https://www.researchgate.net/publication/304192528_Will_promoting_more_typical_SME_start-ups_increase_job_creation_in_South_Africa" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Determinants of youth unemployment in South Africa: evidence from the Vhembe district of Limpopo province</div>
+                            <div class="article-author">Mbulawa, S. & Mbulawa, M. (2016)</div>
+                            <a href="https://www.researchgate.net/publication/311547625_Determinants_of_youth_unemployment_in_South_Africa_evidence_from_the_Vhembe_district_of_Limpopo_province" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="theme-card theme-2">
+                <div class="theme-header">
+                    Theme 2: Corruption
+                </div>
+                <div class="theme-content">
+                    <h3>Topics include:</h3>
+                    <ul class="topics-list">
+                        <li>Systemic corruption</li>
+                        <li>Impact on economic development</li>
+                        <li>Ethics in leadership and reporting</li>
+                        <li>Case studies (e.g., state capture)</li>
+                    </ul>
+                    <span class="articles-count" onclick="toggleArticles(2)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme2">
+                        <div class="article-item">
+                            <div class="article-title">Corruption and economic growth in Africa's developing economies</div>
+                            <div class="article-author">Mlambo, C. (2020)</div>
+                            <a href="https://link.springer.com/article/10.1007/s43151-020-00012-6" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">The impact of corruption on service delivery in South Africa</div>
+                            <div class="article-author">Mafukata, M.A. (2023)</div>
+                            <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2078-59762023000100038" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="theme-card theme-3">
+                <div class="theme-header">
+                    Theme 3: Entrepreneurship
+                </div>
+                <div class="theme-content">
+                    <h3>Topics include:</h3>
+                    <ul class="topics-list">
+                        <li>Entrepreneurship as a solution to unemployment</li>
+                        <li>Barriers to entry</li>
+                        <li>Access to capital</li>
+                        <li>Innovation in the South African context</li>
+                    </ul>
+                    <span class="articles-count" onclick="toggleArticles(3)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme3">
+                        <div class="article-item">
+                            <div class="article-title">Impact of corruption on small business growth in South Africa</div>
+                            <div class="article-author">Mago, S. (2023)</div>
+                            <a href="https://doi.org/10.4102/sajbm.v54i1.3903" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Entrepreneurship education and its influence on financial literacy and entrepreneurial intentions</div>
+                            <div class="article-author">Oluwajodu, F., Greyling, J., & Blaauw, D. (2025)</div>
+                            <a href="https://doi.org/10.22521/edupij.2025.16.261" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="theme-card theme-4">
+                <div class="theme-header">
+                    Theme 4: National Dialogue & Governance
+                </div>
+                <div class="theme-content">
+                    <h3>Topics include:</h3>
+                    <ul class="topics-list">
+                        <li>Service delivery</li>
+                        <li>Public policy effectiveness</li>
+                        <li>Constitutionalism</li>
+                        <li>Governance and accountability</li>
+                    </ul>
+                    <span class="articles-count" onclick="toggleArticles(4)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme4">
+                        <div class="article-item">
+                            <div class="article-title">Title not available</div>
+                            <div class="article-author">Author not available (2023)</div>
+                            <a href="https://www.sciencedirect.com/science/article/pii/S2949736123000313" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        <div class="article-item">
+                            <div class="article-title">Title not available</div>
+                            <div class="article-author">Author not available (2025)</div>
+                        </div>
+                        <a href="https://innovation-entrepreneurship.springeropen.com/articles/10.1186/s13731-025-00481-0" class="article-link" target="_blank">View Article</a>
+                    </div>
+                </div>
+            </div>
+            
+                        <div class="theme-card theme-5">
+                <div class="theme-header">
+                    Theme 5: Education and Skills Mismatch
+                </div>
+                <div class="theme-content">
+                    <h3>Topics include:</h3>
+                    <ul class="topics-list">
+                        <li>Alignment between education and the labour market</li>
+                        <li>Financial literacy</li>
+                        <li>The "failures" of the education system</li>
+                        <li>Solutions for skills development</li>
+                    </ul>
+                    <span class="articles-count" onclick="toggleArticles(5)">0 articles (will be added later)</span>
+                </div>
+            </div>
+            
+                        <div class="theme-card theme-6">
+                <div class="theme-header">
+                    Theme 6: Economic Policies & Issues
+                </div>
+                <div class="theme-content">
+                    <h3>Topics include:</h3>
+                    <ul class="topics-list">
+                        <li>Broad-Based Black Economic Empowerment (B-BBEE)</li>
+                        <li>National Health Insurance (NHI)</li>
+                        <li>Inflation and repo rates</li>
+                        <li>Wealth inequality</li>
+                    </ul>
+                    <span class="articles-count" onclick="toggleArticles(6)">0 articles (will be added later)</span>
+                </div>
+            </div>
+            
+                        <div class="theme-card theme-7">
+                <div class="theme-header">
+                    Theme 7: Social Justice & Inequality
+                </div>
+                <div class="theme-content">
+                    <h3>Topics include:</h3>
+                    <ul class="topics-list">
+                        <li>Crime and poverty</li>
+                        <li>Access to opportunities</li>
+                        <li>Human rights</li>
+                        <li>Social cohesion</li>
+                    </ul>
+                    <span class="articles-count" onclick="toggleArticles(7)">0 articles (will be added later)</span>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>This web page is designed to help you organize articles for your Critical Reading Reflection assignment.</p>
+            <p>Remember to submit your final reflection via clickUP (Turnitin-enabled) by the due date.</p>
+        </footer>
+    </div>
 
-    <script>
-        function toggleArticles(themeNumber) {
-            // For themes with articles
-            if (themeNumber === 1 || themeNumber === 2 || themeNumber === 3) {
-                const articlesList = document.getElementById(`articles-theme${themeNumber}`);
-                articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
-            } else {
-                alert(`No articles available yet for Theme ${themeNumber}. Check back later.`);
-            }
-        }
-    </script>
+    <script>
+        function toggleArticles(themeNumber) {
+            // For themes with articles
+            if (themeNumber === 1 || themeNumber === 2 || themeNumber === 3 || themeNumber === 4) {
+                const articlesList = document.getElementById(`articles-theme${themeNumber}`);
+                articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
+            } else {
+                alert(`No articles available yet for Theme ${themeNumber}. Check back later.`);
+            }
+        }
+    </script>
 </body>
 </html>
