@@ -28,8 +28,8 @@
         
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
             background: linear-gradient(135deg, #2c3e50, #1a2530);
             color: white;
             border-radius: 10px;
@@ -37,36 +37,38 @@
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 10px;
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .instructions {
             background-color: #e8f4fc;
-            padding: 25px;
+            padding: 18px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-left: 5px solid #3498db;
         }
         
         .instructions h2 {
             color: #2980b9;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
         }
         
         .instructions ul {
             margin-left: 20px;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .instructions li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
         }
         
         .themes-grid {
@@ -404,7 +406,21 @@
                         <li>Inflation and repo rates</li>
                         <li>Wealth inequality</li>
                     </ul>
-                    <span class="articles-count" onclick="toggleArticles(6)">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(6)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme6">
+                        <div class="article-item">
+                            <div class="article-title">An Analysis of Post-Apartheid Anti-Fronting Interventions: Fostering Mainstreaming of the Black South Africans into Corporate Sector</div>
+                            <div class="article-author">Mthembu, S. (2023)</div>
+                            <a href="https://www.researchgate.net/publication/375621368_An_Analysis_of_Post-Apartheid_Anti-Fronting_Interventions_Fostering_Mainstreaming_of_the_Black_South_Africans_into_Corporate_Sector" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Economic Policy Reforms and Their Impact on Small Businesses in South Africa</div>
+                            <div class="article-author">Van der Merwe, P. (2024)</div>
+                            <a href="https://www.uowoajournals.org/aabfj/article/id/947/" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -421,7 +437,21 @@
                         <li>Human rights</li>
                         <li>Social cohesion</li>
                     </ul>
-                    <span class="articles-count" onclick="toggleArticles(7)">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(7)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme7">
+                        <div class="article-item">
+                            <div class="article-title">Addressing health equity in South Africa: The role of social determinants</div>
+                            <div class="article-author">Ndlovu, T. & Petersen, I. (2024)</div>
+                            <a href="https://equityhealthj.biomedcentral.com/articles/10.1186/s12939-024-02141-3" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Social Justice and Community Development: A South African Perspective</div>
+                            <div class="article-author">Williams, L. (2024)</div>
+                            <a href="https://link.springer.com/article/10.1007/s41134-025-00377-9" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -435,9 +465,13 @@
     <script>
         function toggleArticles(themeNumber) {
             // For themes with articles
-            if (themeNumber === 1 || themeNumber === 2 || themeNumber === 3 || themeNumber === 4 || themeNumber === 5) {
+            if (themeNumber >= 1 && themeNumber <= 7) {
                 const articlesList = document.getElementById(`articles-theme${themeNumber}`);
-                articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
+                if (articlesList) {
+                    articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
+                } else {
+                    alert(`No articles available yet for Theme ${themeNumber}. Check back later.`);
+                }
             } else {
                 alert(`No articles available yet for Theme ${themeNumber}. Check back later.`);
             }
