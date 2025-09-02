@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Critical Reading Reflection - Themes</title>
+    <title>Critical Reading Reflection - Academic Themes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -28,7 +29,7 @@
         header {
             text-align: center;
             margin-bottom: 40px;
-            padding: 20px;
+            padding: 30px;
             background: linear-gradient(135deg, #2c3e50, #1a2530);
             color: white;
             border-radius: 10px;
@@ -48,7 +49,7 @@
         
         .instructions {
             background-color: #e8f4fc;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
             margin-bottom: 30px;
             border-left: 5px solid #3498db;
@@ -57,6 +58,15 @@
         .instructions h2 {
             color: #2980b9;
             margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .instructions li {
+            margin-bottom: 8px;
         }
         
         .themes-grid {
@@ -120,10 +130,50 @@
             display: inline-block;
             background: #f1f8ff;
             color: #0366d6;
-            padding: 3px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            margin-top: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        
+        .articles-list {
+            margin-top: 15px;
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        .article-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .article-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .article-author {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        .article-link {
+            color: #2980b9;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        .article-link:hover {
+            text-decoration: underline;
         }
         
         footer {
@@ -161,7 +211,13 @@
         <section class="instructions">
             <h2>Assignment Instructions</h2>
             <p>Select one theme from the options below. Each theme folder contains academic articles related to that theme. You must choose two articles from your selected theme's folder and write a critical reflection that analyzes and synthesizes the arguments presented in those texts.</p>
-            <p>Your reflection should include an introduction, summary and analysis of each article, synthesis and critical engagement, and a conclusion.</p>
+            <p>Your reflection should include:</p>
+            <ul>
+                <li>Introduction with thesis statement</li>
+                <li>Summary and analysis of each article</li>
+                <li>Synthesis and critical engagement</li>
+                <li>Conclusion with main analytical points</li>
+            </ul>
         </section>
         
         <h2>Select a Theme</h2>
@@ -169,7 +225,7 @@
         
         <div class="themes-grid">
             <!-- Theme 1 -->
-            <div class="theme-card theme-1" onclick="selectTheme(1)">
+            <div class="theme-card theme-1">
                 <div class="theme-header">
                     Theme 1: Unemployment
                 </div>
@@ -181,12 +237,26 @@
                         <li>Skills mismatch</li>
                         <li>Economic policies affecting job creation</li>
                     </ul>
-                    <span class="articles-count">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(1)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme1">
+                        <div class="article-item">
+                            <div class="article-title">Will promoting more typical SME start-ups increase job creation in South Africa?</div>
+                            <div class="article-author">Fatoki, O. (2016)</div>
+                            <a href="https://www.researchgate.net/publication/304192528_Will_promoting_more_typical_SME_start-ups_increase_job_creation_in_South_Africa" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Determinants of youth unemployment in South Africa: evidence from the Vhembe district of Limpopo province</div>
+                            <div class="article-author">Mbulawa, S. & Mbulawa, M. (2016)</div>
+                            <a href="https://www.researchgate.net/publication/311547625_Determinants_of_youth_unemployment_in_South_Africa_evidence_from_the_Vhembe_district_of_Limpopo_province" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Theme 2 -->
-            <div class="theme-card theme-2" onclick="selectTheme(2)">
+            <div class="theme-card theme-2">
                 <div class="theme-header">
                     Theme 2: Corruption
                 </div>
@@ -198,12 +268,26 @@
                         <li>Ethics in leadership and reporting</li>
                         <li>Case studies (e.g., state capture)</li>
                     </ul>
-                    <span class="articles-count">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(2)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme2">
+                        <div class="article-item">
+                            <div class="article-title">Corruption and economic growth in Africa's developing economies</div>
+                            <div class="article-author">Mlambo, C. (2020)</div>
+                            <a href="https://link.springer.com/article/10.1007/s43151-020-00012-6" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">The impact of corruption on service delivery in South Africa</div>
+                            <div class="article-author">Mafukata, M.A. (2023)</div>
+                            <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2078-59762023000100038" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
             <!-- Theme 3 -->
-            <div class="theme-card theme-3" onclick="selectTheme(3)">
+            <div class="theme-card theme-3">
                 <div class="theme-header">
                     Theme 3: Entrepreneurship
                 </div>
@@ -215,12 +299,12 @@
                         <li>Access to capital</li>
                         <li>Innovation in the South African context</li>
                     </ul>
-                    <span class="articles-count">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(3)">0 articles (will be added later)</span>
                 </div>
             </div>
             
             <!-- Theme 4 -->
-            <div class="theme-card theme-4" onclick="selectTheme(4)">
+            <div class="theme-card theme-4">
                 <div class="theme-header">
                     Theme 4: National Dialogue & Governance
                 </div>
@@ -232,12 +316,12 @@
                         <li>Constitutionalism</li>
                         <li>Governance and accountability</li>
                     </ul>
-                    <span class="articles-count">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(4)">0 articles (will be added later)</span>
                 </div>
             </div>
             
             <!-- Theme 5 -->
-            <div class="theme-card theme-5" onclick="selectTheme(5)">
+            <div class="theme-card theme-5">
                 <div class="theme-header">
                     Theme 5: Education and Skills Mismatch
                 </div>
@@ -249,12 +333,12 @@
                         <li>The "failures" of the education system</li>
                         <li>Solutions for skills development</li>
                     </ul>
-                    <span class="articles-count">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(5)">0 articles (will be added later)</span>
                 </div>
             </div>
             
             <!-- Theme 6 -->
-            <div class="theme-card theme-6" onclick="selectTheme(6)">
+            <div class="theme-card theme-6">
                 <div class="theme-header">
                     Theme 6: Economic Policies & Issues
                 </div>
@@ -266,12 +350,12 @@
                         <li>Inflation and repo rates</li>
                         <li>Wealth inequality</li>
                     </ul>
-                    <span class="articles-count">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(6)">0 articles (will be added later)</span>
                 </div>
             </div>
             
             <!-- Theme 7 -->
-            <div class="theme-card theme-7" onclick="selectTheme(7)">
+            <div class="theme-card theme-7">
                 <div class="theme-header">
                     Theme 7: Social Justice & Inequality
                 </div>
@@ -283,7 +367,7 @@
                         <li>Human rights</li>
                         <li>Social cohesion</li>
                     </ul>
-                    <span class="articles-count">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(7)">0 articles (will be added later)</span>
                 </div>
             </div>
         </div>
@@ -295,9 +379,14 @@
     </div>
 
     <script>
-        function selectTheme(themeNumber) {
-            alert(`You've selected Theme ${themeNumber}. Once you share the articles, they will be added to this folder.`);
-            // In a real implementation, this would navigate to the theme page or show articles
+        function toggleArticles(themeNumber) {
+            // For themes with articles
+            if (themeNumber === 1 || themeNumber === 2) {
+                const articlesList = document.getElementById(`articles-theme${themeNumber}`);
+                articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
+            } else {
+                alert(`No articles available yet for Theme ${themeNumber}. Check back later.`);
+            }
         }
     </script>
 </body>
