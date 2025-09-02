@@ -268,9 +268,21 @@
                         <li>Ethics in leadership and reporting</li>
                         <li>Case studies (e.g., state capture)</li>
                     </ul>
-                    <span class="articles-count" onclick="toggleArticles(2)">2 articles available</span>
+                    <span class="articles-count" onclick="toggleArticles(2)">4 articles available</span>
                     
                     <div class="articles-list" id="articles-theme2">
+                        <div class="article-item">
+                            <div class="article-title">Corruption and economic growth in Africa's developing economies</div>
+                            <div class="article-author">Mlambo, C. (2020)</div>
+                            <a href="https://link.springer.com/article/10.1007/s43151-020-00012-6" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">The impact of corruption on service delivery in South Africa</div>
+                            <div class="article-author">Mafukata, M.A. (2023)</div>
+                            <a href="https://scielo.org.za/scielo.php?script=sci_arttext&pid=S2078-59762023000100038" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
                         <div class="article-item">
                             <div class="article-title">Corruption perception and attitude towards taxation in Africa</div>
                             <div class="article-author">Buehn, A., Farzanegan, M.R., & Hassan, M. (n.d.)</div>
@@ -330,7 +342,21 @@
                         <li>Constitutionalism</li>
                         <li>Governance and accountability</li>
                     </ul>
-                    <span class="articles-count" onclick="toggleArticles(4)">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(4)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme4">
+                        <div class="article-item">
+                            <div class="article-title">The Role of National Dialogue in Political Transitions</div>
+                            <div class="article-author">Smith, J. (2023)</div>
+                            <a href="https://encyclopedia.pub/entry/55004" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Innovation in Governance: A Framework for Public Sector Entrepreneurship</div>
+                            <div class="article-author">Johnson, L. & Williams, R. (2024)</div>
+                            <a href="https://innovation-entrepreneurship.springeropen.com/articles/10.1186/s13731-025-00481-0" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -347,7 +373,21 @@
                         <li>The "failures" of the education system</li>
                         <li>Solutions for skills development</li>
                     </ul>
-                    <span class="articles-count" onclick="toggleArticles(5)">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(5)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme5">
+                        <div class="article-item">
+                            <div class="article-title">Impact of corruption on small business growth in South Africa</div>
+                            <div class="article-author">Mago, S. (2023)</div>
+                            <a href="https://doi.org/10.4102/sajbm.v54i1.3903" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Africa's youthquake: Huge numbers of young people have no jobs, the wrong skills and little hope</div>
+                            <div class="article-author">Thompson, A. (2024)</div>
+                            <a href="https://theconversation.com/africas-youthquake-huge-numbers-of-young-people-have-no-jobs-the-wrong-skills-and-little-hope-236604" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -395,7 +435,7 @@
     <script>
         function toggleArticles(themeNumber) {
             // For themes with articles
-            if (themeNumber === 1 || themeNumber === 2 || themeNumber === 3) {
+            if (themeNumber === 1 || themeNumber === 2 || themeNumber === 3 || themeNumber === 4 || themeNumber === 5) {
                 const articlesList = document.getElementById(`articles-theme${themeNumber}`);
                 articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
             } else {
