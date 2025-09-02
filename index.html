@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Critical Reading Reflection - Academic Themes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -17,7 +17,6 @@
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
         .container {
@@ -150,15 +149,13 @@
             display: inline-block;
             background: #e0f7fa;
             color: #0277bd;
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 18px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             margin-top: 15px;
             cursor: pointer;
             transition: background 0.3s;
-            min-width: 160px;
-            text-align: center;
         }
         
         .articles-count:hover {
@@ -200,14 +197,12 @@
             gap: 6px;
             color: #16a085;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            padding: 8px 12px;
+            padding: 6px 10px;
             background: #e0f7fa;
             border-radius: 4px;
             transition: all 0.2s ease;
-            min-width: 120px;
-            justify-content: center;
         }
         
         .article-link:hover {
@@ -232,7 +227,7 @@
         .theme-links {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: flex-start; /* Left aligned now */
             width: 100%;
             gap: 12px;
         }
@@ -240,7 +235,7 @@
         .theme-link-item a {
             text-align: left;
             width: 100%;
-            padding: 12px 15px;
+            padding: 10px;
             color: #2c3e50;
             text-decoration: none;
             font-weight: 500;
@@ -269,48 +264,6 @@
             scroll-margin-top: 120px;
         }
         
-        /* Mobile menu toggle button - hidden on desktop */
-        .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            top: 15px;
-            left: 15px;
-            z-index: 1001;
-            background: #2c3e50;
-            color: white;
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            align-items: center;
-            justify-content: center;
-            z-index: 1001;
-        }
-        
-        .mobile-menu-toggle i {
-            display: flex;
-        }
-        
-        /* Sidebar overlay for mobile */
-        .sidebar-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 999;
-            display: none;
-        }
-        
-        .sidebar.mobile-active {
-            transform: translateX(0);
-            z-index: 1000;
-        }
-        
         /* Glowing button in top right */
         .university-badge {
             position: fixed;
@@ -328,30 +281,11 @@
             text-decoration: none;
             display: inline-block;
             border: 2px solid #2C3E50;
-            min-width: 180px;
-            text-align: center;
         }
         
         .university-badge:hover {
             box-shadow: 0 0 20px #E67E22, 0 0 40px #E67E22;
             transform: scale(1.05);
-        }
-        
-        .close-badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: white;
-            color: #D35400;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
         
         @keyframes pulse {
@@ -360,169 +294,43 @@
             100% { box-shadow: 0 0 15px #D35400, 0 0 30px #D35400; }
         }
         
-        @media (max-width: 1024px) {
-            .university-badge {
-                font-size: 0.95rem;
-                padding: 8px 14px;
-                min-width: 160px;
-            }
-        }
-        
         @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: flex;
-            }
-            
             .container {
                 grid-template-columns: 1fr;
                 padding: 15px;
             }
-            
-            .sidebar {
-                position: fixed;
-                top: 0;
-                left: -270px;
-                width: 250px;
-                height: 100vh;
-                z-index: 1000;
-                transition: transform 0.3s ease;
-                box-shadow: 0 0 20px rgba(0,0,0,0.2);
-                padding: 20px 20px 80px 20px;
-                overflow-y: auto;
-            }
-            
-            .sidebar.mobile-active {
-                left: 0;
-                transform: translateX(0);
-            }
-            
-            .main-content {
+            .sidebar, .main-content {
                 grid-column: auto;
-                width: 100%;
             }
-            
             .theme-links {
                 align-items: stretch;
             }
-            
             .university-badge {
                 top: 10px;
                 right: 10px;
-                font-size: 0.85rem;
-                padding: 6px 12px;
-                min-width: 140px;
-                max-width: 80%;
-            }
-            
-            .close-badge {
-                top: -6px;
-                right: -6px;
-                width: 18px;
-                height: 18px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .subtitle {
-                font-size: 0.95rem;
-            }
-            
-            .instructions {
-                padding: 15px;
-            }
-            
-            .instructions ul {
-                padding-left: 15px;
-            }
-            
-            .theme-header {
-                padding: 16px;
-                font-size: 1.1rem;
-            }
-            
-            .theme-content {
-                padding: 16px;
-            }
-            
-            /* Make touch targets larger on mobile */
-            .theme-link-item a {
-                padding: 14px;
-                font-size: 1rem;
-            }
-            
-            .articles-count {
-                padding: 10px 18px;
-                font-size: 1rem;
-            }
-            
-            .article-link {
-                padding: 10px 15px;
-                font-size: 0.95rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .university-badge {
-                font-size: 0.75rem;
-                padding: 5px 10px;
-                min-width: 120px;
-            }
-            
-            h1 {
-                font-size: 1.6rem;
-            }
-            
-            .article-title {
-                font-size: 0.95rem;
-            }
-            
-            .articles-count {
-                font-size: 0.95rem;
-                min-width: 140px;
-            }
-            
-            .article-link {
-                font-size: 0.85rem;
-                min-width: 110px;
-            }
-            
-            .theme-header {
-                font-size: 1rem;
-                padding: 14px;
+                font-size: 0.9rem;
+                padding: 8px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Mobile menu toggle button -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        <i class="fas fa-bars"></i>
-    </button>
-    
-    <!-- Sidebar overlay for mobile -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    
     <!-- Glowing University Badge -->
-    <div class="university-badge" id="universityBadge">
-        ALL 124 - University of Pretoria
-        <div class="close-badge" id="closeBadge">&times;</div>
-    </div>
+    <a href="#" class="university-badge">ALL 124 - University of Pretoria</a>
 
     <div class="container">
         <!-- Left Navigation Sidebar -->
-        <div class="sidebar" id="sidebar">
+        <div class="sidebar">
             <h2 style="font-size: 1.2rem; margin-bottom: 15px; color: #2c3e50;">Select a Theme</h2>
             <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">Jump to any theme:</p>
             <div class="theme-links">
-                <div class="theme-link-item"><a href="#theme1" onclick="closeMobileMenu()">Theme 1: Unemployment</a></div>
-                <div class="theme-link-item"><a href="#theme2" onclick="closeMobileMenu()">Theme 2: Corruption</a></div>
-                <div class="theme-link-item"><a href="#theme3" onclick="closeMobileMenu()">Theme 3: Entrepreneurship</a></div>
-                <div class="theme-link-item"><a href="#theme4" onclick="closeMobileMenu()">Theme 4: National Dialogue & Governance</a></div>
-                <div class="theme-link-item"><a href="#theme5" onclick="closeMobileMenu()">Theme 5: Education and Skills Mismatch</a></div>
-                <div class="theme-link-item"><a href="#theme6" onclick="closeMobileMenu()">Theme 6: Economic Policies & Issues</a></div>
-                <div class="theme-link-item"><a href="#theme7" onclick="closeMobileMenu()">Theme 7: Social Justice & Inequality</a></div>
+                <div class="theme-link-item"><a href="#theme1">Theme 1: Unemployment</a></div>
+                <div class="theme-link-item"><a href="#theme2">Theme 2: Corruption</a></div>
+                <div class="theme-link-item"><a href="#theme3">Theme 3: Entrepreneurship</a></div>
+                <div class="theme-link-item"><a href="#theme4">Theme 4: National Dialogue & Governance</a></div>
+                <div class="theme-link-item"><a href="#theme5">Theme 5: Education and Skills Mismatch</a></div>
+                <div class="theme-link-item"><a href="#theme6">Theme 6: Economic Policies & Issues</a></div>
+                <div class="theme-link-item"><a href="#theme7">Theme 7: Social Justice & Inequality</a></div>
             </div>
         </div>
 
@@ -828,9 +636,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    // Skip processing for the close button
-                    if (this.classList.contains('close-badge')) return;
-                    
                     e.preventDefault();
                     
                     const targetId = this.getAttribute('href');
@@ -850,56 +655,7 @@
                     }
                 });
             });
-            
-            // Mobile menu functionality
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-            
-            mobileMenuToggle.addEventListener('click', function() {
-                sidebar.classList.add('mobile-active');
-                sidebarOverlay.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-            });
-            
-            sidebarOverlay.addEventListener('click', function() {
-                closeMobileMenu();
-            });
-            
-            // Close badge functionality
-            const universityBadge = document.getElementById('universityBadge');
-            const closeBadge = document.getElementById('closeBadge');
-            
-            if (closeBadge) {
-                closeBadge.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    universityBadge.style.display = 'none';
-                });
-            }
-            
-            // Check if badge is overlapping content on small screens
-            checkBadgePosition();
-            window.addEventListener('resize', checkBadgePosition);
         });
-        
-        function closeMobileMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebarOverlay');
-            
-            sidebar.classList.remove('mobile-active');
-            sidebarOverlay.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        function checkBadgePosition() {
-            const universityBadge = document.getElementById('universityBadge');
-            if (!universityBadge) return;
-            
-            // Only check on mobile
-            if (window.innerWidth <= 768) {
-                universityBadge.style.display = 'block';
-            }
-        }
     </script>
 </body>
 </html>
