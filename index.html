@@ -299,7 +299,21 @@
                         <li>Access to capital</li>
                         <li>Innovation in the South African context</li>
                     </ul>
-                    <span class="articles-count" onclick="toggleArticles(3)">0 articles (will be added later)</span>
+                    <span class="articles-count" onclick="toggleArticles(3)">2 articles available</span>
+                    
+                    <div class="articles-list" id="articles-theme3">
+                        <div class="article-item">
+                            <div class="article-title">Impact of corruption on small business growth in South Africa</div>
+                            <div class="article-author">Mago, S. (2023)</div>
+                            <a href="https://doi.org/10.4102/sajbm.v54i1.3903" class="article-link" target="_blank">View Article</a>
+                        </div>
+                        
+                        <div class="article-item">
+                            <div class="article-title">Entrepreneurship education and its influence on financial literacy and entrepreneurial intentions</div>
+                            <div class="article-author">Oluwajodu, F., Greyling, J., & Blaauw, D. (2025)</div>
+                            <a href="https://doi.org/10.22521/edupij.2025.16.261" class="article-link" target="_blank">View Article</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -381,7 +395,7 @@
     <script>
         function toggleArticles(themeNumber) {
             // For themes with articles
-            if (themeNumber === 1 || themeNumber === 2) {
+            if (themeNumber === 1 || themeNumber === 2 || themeNumber === 3) {
                 const articlesList = document.getElementById(`articles-theme${themeNumber}`);
                 articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
             } else {
