@@ -23,10 +23,10 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
             display: grid;
             grid-template-columns: 250px 1fr;
             gap: 25px;
+            padding: 0 20px;
         }
 
         .sidebar {
@@ -34,6 +34,11 @@
             position: sticky;
             top: 20px;
             align-self: start;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            height: fit-content;
         }
 
         .main-content {
@@ -99,6 +104,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             cursor: pointer;
+            scroll-margin-top: 100px; /* Prevents header overlap on scroll */
         }
         
         .theme-card:hover {
@@ -209,12 +215,38 @@
         .theme-6 .theme-header { background: #1abc9c; }
         .theme-7 .theme-header { background: #d35400; }
         
+        /* Sidebar Links Centered */
+        .theme-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .theme-link-item a {
+            text-align: center;
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .theme-link-item a:hover {
+            background: #f0f0f0;
+        }
+        
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
+                padding: 10px;
             }
             .sidebar, .main-content {
                 grid-column: auto;
+            }
+            .theme-links {
+                align-items: flex-start;
             }
         }
     </style>
@@ -224,29 +256,15 @@
         <!-- Left Navigation Sidebar -->
         <div class="sidebar">
             <h2 style="font-size: 1.2rem; margin-bottom: 15px; color: #2c3e50;">Select a Theme</h2>
-            <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">Click on a theme to view its articles:</p>
+            <p style="font-size: 0.9rem; color: #555; margin-bottom: 15px;">Click on a theme to jump to its section:</p>
             <div class="theme-links">
-                <div class="theme-link-item">
-                    <a href="#theme1" onclick="toggleArticles(1)" style="color: #e74c3c; text-decoration: none; font-weight: 500;">Theme 1: Unemployment</a>
-                </div>
-                <div class="theme-link-item" style="margin: 10px 0;">
-                    <a href="#theme2" onclick="toggleArticles(2)" style="color: #2ecc71; text-decoration: none; font-weight: 500;">Theme 2: Corruption</a>
-                </div>
-                <div class="theme-link-item" style="margin: 10px 0;">
-                    <a href="#theme3" onclick="toggleArticles(3)" style="color: #3498db; text-decoration: none; font-weight: 500;">Theme 3: Entrepreneurship</a>
-                </div>
-                <div class="theme-link-item" style="margin: 10px 0;">
-                    <a href="#theme4" onclick="toggleArticles(4)" style="color: #9b59b6; text-decoration: none; font-weight: 500;">Theme 4: National Dialogue & Governance</a>
-                </div>
-                <div class="theme-link-item" style="margin: 10px 0;">
-                    <a href="#theme5" onclick="toggleArticles(5)" style="color: #f39c12; text-decoration: none; font-weight: 500;">Theme 5: Education and Skills Mismatch</a>
-                </div>
-                <div class="theme-link-item" style="margin: 10px 0;">
-                    <a href="#theme6" onclick="toggleArticles(6)" style="color: #1abc9c; text-decoration: none; font-weight: 500;">Theme 6: Economic Policies & Issues</a>
-                </div>
-                <div class="theme-link-item" style="margin: 10px 0;">
-                    <a href="#theme7" onclick="toggleArticles(7)" style="color: #d35400; text-decoration: none; font-weight: 500;">Theme 7: Social Justice & Inequality</a>
-                </div>
+                <div class="theme-link-item"><a href="#theme1">Theme 1: Unemployment</a></div>
+                <div class="theme-link-item"><a href="#theme2">Theme 2: Corruption</a></div>
+                <div class="theme-link-item"><a href="#theme3">Theme 3: Entrepreneurship</a></div>
+                <div class="theme-link-item"><a href="#theme4">Theme 4: National Dialogue & Governance</a></div>
+                <div class="theme-link-item"><a href="#theme5">Theme 5: Education and Skills Mismatch</a></div>
+                <div class="theme-link-item"><a href="#theme6">Theme 6: Economic Policies & Issues</a></div>
+                <div class="theme-link-item"><a href="#theme7">Theme 7: Social Justice & Inequality</a></div>
             </div>
         </div>
 
@@ -272,7 +290,7 @@
             
             <div class="themes-grid">
                 <!-- Theme 1 -->
-                <div class="theme-card theme-1">
+                <div id="theme1" class="theme-card theme-1">
                     <div class="theme-header">
                         Theme 1: Unemployment
                     </div>
@@ -303,7 +321,7 @@
                 </div>
                 
                 <!-- Theme 2 -->
-                <div class="theme-card theme-2">
+                <div id="theme2" class="theme-card theme-2">
                     <div class="theme-header">
                         Theme 2: Corruption
                     </div>
@@ -333,7 +351,7 @@
                             <div class="article-item">
                                 <div class="article-title">Corruption perception and attitude towards taxation in Africa</div>
                                 <div class="article-author">Buehn, A., Farzanegan, M.R., & Hassan, M. (n.d.)</div>
-                                <a href="https://cris.maastrichtuniversity.nl/en/publications/corruption-perception-and-attitude-towards-taxation-in-africa#:~:text=This%20paper%20analyses%20the%20effect%20of%20the%20quality,from%20thirty-six%20African%20countries%20over%20the%20period%202011-2015." class="article-link" target="_blank">View Article</a>
+                                <a href="https://cris.maastrichtuniversity.nl/en/publications/corruption-perception-and-attitude-towards-taxation-in-africa" class="article-link" target="_blank">View Article</a>
                             </div>
                             
                             <div class="article-item">
@@ -346,7 +364,7 @@
                 </div>
                 
                 <!-- Theme 3 -->
-                <div class="theme-card theme-3">
+                <div id="theme3" class="theme-card theme-3">
                     <div class="theme-header">
                         Theme 3: Entrepreneurship
                     </div>
@@ -377,7 +395,7 @@
                 </div>
                 
                 <!-- Theme 4 -->
-                <div class="theme-card theme-4">
+                <div id="theme4" class="theme-card theme-4">
                     <div class="theme-header">
                         Theme 4: National Dialogue & Governance
                     </div>
@@ -408,7 +426,7 @@
                 </div>
                 
                 <!-- Theme 5 -->
-                <div class="theme-card theme-5">
+                <div id="theme5" class="theme-card theme-5">
                     <div class="theme-header">
                         Theme 5: Education and Skills Mismatch
                     </div>
@@ -439,7 +457,7 @@
                 </div>
                 
                 <!-- Theme 6 -->
-                <div class="theme-card theme-6">
+                <div id="theme6" class="theme-card theme-6">
                     <div class="theme-header">
                         Theme 6: Economic Policies & Issues
                     </div>
@@ -470,7 +488,7 @@
                 </div>
                 
                 <!-- Theme 7 -->
-                <div class="theme-card theme-7">
+                <div id="theme7" class="theme-card theme-7">
                     <div class="theme-header">
                         Theme 7: Social Justice & Inequality
                     </div>
@@ -510,17 +528,27 @@
 
     <script>
         function toggleArticles(themeNumber) {
-            if (themeNumber >= 1 && themeNumber <= 7) {
-                const articlesList = document.getElementById(`articles-theme${themeNumber}`);
-                if (articlesList) {
-                    articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
-                } else {
-                    alert(`No articles available yet for Theme ${themeNumber}. Check back later.`);
-                }
-            } else {
-                alert(`No articles available yet for Theme ${themeNumber}. Check back later.`);
+            const articlesList = document.getElementById(`articles-theme${themeNumber}`);
+            if (articlesList) {
+                articlesList.style.display = articlesList.style.display === 'block' ? 'none' : 'block';
             }
         }
+
+        // Optional: Smooth scrolling behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
