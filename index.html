@@ -264,6 +264,36 @@
             scroll-margin-top: 120px;
         }
         
+        /* Glowing button in top right */
+        .university-badge {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: linear-gradient(135deg, #D35400, #C0392B);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 0 15px #D35400, 0 0 30px #D35400;
+            animation: pulse 2s infinite;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid #2C3E50;
+        }
+        
+        .university-badge:hover {
+            box-shadow: 0 0 20px #E67E22, 0 0 40px #E67E22;
+            transform: scale(1.05);
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px #D35400, 0 0 30px #D35400; }
+            50% { box-shadow: 0 0 20px #E67E22, 0 0 40px #E67E22; }
+            100% { box-shadow: 0 0 15px #D35400, 0 0 30px #D35400; }
+        }
+        
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
@@ -275,10 +305,19 @@
             .theme-links {
                 align-items: stretch;
             }
+            .university-badge {
+                top: 10px;
+                right: 10px;
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Glowing University Badge -->
+    <a href="#" class="university-badge">ALL 124 - University of Pretoria</a>
+
     <div class="container">
         <!-- Left Navigation Sidebar -->
         <div class="sidebar">
